@@ -1,0 +1,20 @@
+import Phaser from 'phaser';
+import { GAME_WIDTH, GAME_HEIGHT, COLORS } from '../config.js';
+
+export default class BootScene extends Phaser.Scene {
+  constructor() {
+    super({ key: 'BootScene' });
+  }
+
+  create() {
+    this.add
+      .text(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'Loading...', {
+        fontFamily: 'monospace',
+        fontSize: '32px',
+        color: COLORS.UI_TEXT,
+      })
+      .setOrigin(0.5);
+
+    this.time.delayedCall(200, () => this.scene.start('TitleScene'));
+  }
+}
