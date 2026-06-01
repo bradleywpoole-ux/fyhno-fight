@@ -2,6 +2,10 @@ import Phaser from 'phaser';
 import { GAME_WIDTH, GAME_HEIGHT, COLORS } from './config.js';
 import BootScene from './scenes/BootScene.js';
 import TitleScene from './scenes/TitleScene.js';
+import saveManager from './services/SaveManager.js';
+
+saveManager.load();
+window.saveManager = saveManager;
 
 const config = {
   type: Phaser.AUTO,
