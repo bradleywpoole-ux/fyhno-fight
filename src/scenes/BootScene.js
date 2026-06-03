@@ -6,6 +6,10 @@ export default class BootScene extends Phaser.Scene {
     super({ key: 'BootScene' });
   }
 
+  preload() {
+    this.load.image('fyhno-idle', 'assets/sprites/fyhno/fyhno-idle.png');
+  }
+
   create() {
     this.add
       .text(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'Loading...', {

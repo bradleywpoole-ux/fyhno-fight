@@ -27,11 +27,14 @@ export default class TitleScene extends Phaser.Scene {
       .setOrigin(0.5);
 
     this.add
-      .text(cx, GAME_HEIGHT * 0.75, 'Tap to start', {
+      .text(cx, GAME_HEIGHT * 0.62, 'Tap to start', {
         fontFamily: 'monospace',
         fontSize: '24px',
         color: COLORS.UI_TEXT_DIM,
       })
       .setOrigin(0.5);
+
+    const fyhno = this.add.image(cx, GAME_HEIGHT * 0.78, 'fyhno-idle').setOrigin(0.5).setScale(4);
+    fyhno.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
   }
 }
