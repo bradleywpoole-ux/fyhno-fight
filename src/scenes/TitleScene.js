@@ -36,5 +36,8 @@ export default class TitleScene extends Phaser.Scene {
 
     const fyhno = this.add.image(cx, GAME_HEIGHT * 0.78, 'fyhno-idle').setOrigin(0.5).setScale(4);
     fyhno.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+
+    this.input.keyboard.on('keydown', () => this.scene.start('GameScene'));
+    this.input.on('pointerdown', () => this.scene.start('GameScene'));
   }
 }
