@@ -11,6 +11,7 @@ export default class BootScene extends Phaser.Scene {
     this.load.image('fyhno-flying', 'assets/sprites/fyhno/fyhno-flying.png');
     this.load.image('mountain-sky', 'assets/backgrounds/mountain-sky.png');
     this.load.image('heart', 'assets/sprites/ui/heart.png');
+    this.load.audio('main-theme', 'assets/audio/main-theme.mp3');
   }
 
   create() {
@@ -23,5 +24,8 @@ export default class BootScene extends Phaser.Scene {
       .setOrigin(0.5);
 
     this.time.delayedCall(200, () => this.scene.start('TitleScene'));
+
+    const music = this.sound.add('main-theme', { loop: true, volume: 0.5 });
+    music.play();
   }
 }
