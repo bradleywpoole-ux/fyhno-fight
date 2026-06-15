@@ -3,6 +3,10 @@ import { GAME_WIDTH, GAME_HEIGHT } from '../config.js';
 
 const SPEED = 200;
 const SPRITE_HALF = 128;
+const HEART_SCALE = 4;
+const HEART_GAP = 8;
+const HEART_MARGIN = 16;
+const HEART_W = 8 * HEART_SCALE;
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -17,6 +21,16 @@ export default class GameScene extends Phaser.Scene {
       .setOrigin(0.5)
       .setScale(4);
     this.fyhno.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+
+    this.hearts = [];
+    for (let i = 0; i < 3; i++) {
+      const heart = this.add
+        .image(HEART_MARGIN + i * (HEART_W + HEART_GAP), HEART_MARGIN, 'heart')
+        .setOrigin(0, 0)
+        .setScale(HEART_SCALE);
+      this.hearts.push(heart);
+    }
+    this.textures.get('heart').setFilter(Phaser.Textures.FilterMode.NEAREST);
 
     this.cursors = this.input.keyboard.createCursorKeys();
     this.dir = new Phaser.Math.Vector2();
