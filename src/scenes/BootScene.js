@@ -11,6 +11,7 @@ export default class BootScene extends Phaser.Scene {
     this.load.image('fyhno-flying', 'assets/sprites/fyhno/fyhno-flying.png');
     this.load.image('mountain-sky', 'assets/backgrounds/mountain-sky.png');
     this.load.image('heart', 'assets/sprites/ui/heart.png');
+    this.load.image('dpad-arrow', 'assets/sprites/ui/dpad-arrow.png');
     this.load.audio('main-theme', 'assets/audio/main-theme.mp3');
   }
 
