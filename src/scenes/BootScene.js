@@ -8,6 +8,8 @@ export default class BootScene extends Phaser.Scene {
 
   preload() {
     this.load.image('fyhno-idle', 'assets/sprites/fyhno/fyhno-idle.png');
+    this.load.image('fyhno-flying', 'assets/sprites/fyhno/fyhno-flying.png');
+    this.load.image('mountain-sky', 'assets/backgrounds/mountain-sky.png');
   }
 
   create() {

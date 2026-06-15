@@ -1,7 +1,12 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { PNG } from 'pngjs';
 
-const PATH = 'assets/sprites/fyhno/fyhno-idle.png';
+const [, , PATH] = process.argv;
+if (!PATH) {
+  console.error('Usage: node scripts/strip-bg.mjs <path-to-png>');
+  process.exit(1);
+}
+
 const TOLERANCE = 12;
 
 const png = PNG.sync.read(readFileSync(PATH));

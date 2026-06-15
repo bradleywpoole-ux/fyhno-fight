@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { GAME_WIDTH, GAME_HEIGHT, COLORS } from '../config.js';
+import { GAME_WIDTH, GAME_HEIGHT } from '../config.js';
 
 const SPEED = 200;
 const SPRITE_HALF = 128;
@@ -10,10 +10,10 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBackgroundColor(COLORS.UI_BG);
+    this.add.image(0, 0, 'mountain-sky').setOrigin(0, 0);
 
     this.fyhno = this.add
-      .sprite(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'fyhno-idle')
+      .sprite(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'fyhno-flying')
       .setOrigin(0.5)
       .setScale(4);
     this.fyhno.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
