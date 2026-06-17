@@ -39,6 +39,8 @@ Self-generated via Node scripts using the Endesga 32 palette. License: original 
 | ---- | ------ | ----- | ----- |
 | `assets/sprites/ui/heart.png` | `scripts/make-heart.mjs` | 2026-06-15 | 8×7 pixel-art heart in Endesga 32 palette. Used in GameScene hearts UI. |
 | `assets/sprites/ui/dpad-arrow.png` | `scripts/make-arrow.mjs` | 2026-06-15 | 16×16 D-pad arrow button in Endesga 32 palette. Used 4× in GameScene D-pad (rotated 0°/90°/180°/270°). |
+| `assets/sprites/ui/icon-192.png` | `scripts/make-icons.mjs` | 2026-06-17 | 192×192 PWA app icon. Composites `fyhno-flying.png` on Endesga 32 `blue_mid` background with bold monospace "Fyhno" label. **License caveat:** inherits Midjourney terms from the embedded Fyhno sprite (see Character sprites). Referenced by PWA manifest. |
+| `assets/sprites/ui/icon-512.png` | `scripts/make-icons.mjs` | 2026-06-17 | 512×512 PWA app icon. Same composition as `icon-192.png`. **License caveat:** inherits Midjourney terms from the embedded Fyhno sprite (see Character sprites). Referenced by PWA manifest. |
 
 ## Palettes
 
@@ -63,3 +65,4 @@ CC0 / Public Domain. No attribution required, but recorded for our own paper tra
 | `phaser` | ^4.0.0 | MIT | Game engine. |
 | `vite` | ^5.4.0 | MIT | Dev server / build tool. |
 | `pngjs` | ^7.x (devDependency) | MIT | PNG read/write. Used only by `scripts/*` (asset processing); not bundled into game. |
+| `canvas` | ^3.x (devDependency) | MIT | Canvas2D API for Node. Used only by `scripts/make-icons.mjs` for image composition + text rendering; not bundled into game. |
