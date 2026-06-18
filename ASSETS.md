@@ -17,10 +17,10 @@ Midjourney V7 (AI-generated). License: Midjourney commercial terms apply. Path A
 
 | Path | Source | Added | Notes |
 | ---- | ------ | ----- | ----- |
-| `assets/sprites/fyhno/fyhno-source-standing.png` | Midjourney V7 | 2026-06-01 | Master source, standing pose. Not loaded by game. |
-| `assets/sprites/fyhno/fyhno-idle.png` | Derived from `fyhno-source-standing.png` | 2026-06-04 | 64×64 game-ready idle sprite. Background stripped via `scripts/strip-bg.mjs`. Used in TitleScene. |
-| `assets/sprites/fyhno/fyhno-source-flying.png` | Midjourney V7 | 2026-06-15 | Master source, flying pose. Used image-reference of standing source for character consistency. Not loaded by game. |
-| `assets/sprites/fyhno/fyhno-flying.png` | Derived from `fyhno-source-flying.png` | 2026-06-15 | 64×64 game-ready flying sprite. Background stripped via `scripts/strip-bg.mjs`. Used in GameScene. |
+| `public/assets/sprites/fyhno/fyhno-source-standing.png` | Midjourney V7 | 2026-06-01 | Master source, standing pose. Not loaded by game. |
+| `public/assets/sprites/fyhno/fyhno-idle.png` | Derived from `fyhno-source-standing.png` | 2026-06-04 | 64×64 game-ready idle sprite. Background stripped via `scripts/strip-bg.mjs`. Used in TitleScene. |
+| `public/assets/sprites/fyhno/fyhno-source-flying.png` | Midjourney V7 | 2026-06-15 | Master source, flying pose. Used image-reference of standing source for character consistency. Not loaded by game. |
+| `public/assets/sprites/fyhno/fyhno-flying.png` | Derived from `fyhno-source-flying.png` | 2026-06-15 | 64×64 game-ready flying sprite. Background stripped via `scripts/strip-bg.mjs`. Used in GameScene. |
 
 ## Backgrounds
 
@@ -28,8 +28,8 @@ Midjourney V7 (AI-generated). Same license posture as character sprites.
 
 | Path | Source | Added | Notes |
 | ---- | ------ | ----- | ----- |
-| `assets/backgrounds/mountain-sky-source.png` | Midjourney V7 | 2026-06-04 | Master source, 1456×816. Not loaded by game. |
-| `assets/backgrounds/mountain-sky.png` | Derived from `mountain-sky-source.png` | 2026-06-04 | 1280×720 game-ready. Resized via `scripts/resize-bg.mjs` (nearest-neighbor). Used in GameScene. |
+| `public/assets/backgrounds/mountain-sky-source.png` | Midjourney V7 | 2026-06-04 | Master source, 1456×816. Not loaded by game. |
+| `public/assets/backgrounds/mountain-sky.png` | Derived from `mountain-sky-source.png` | 2026-06-04 | 1280×720 game-ready. Resized via `scripts/resize-bg.mjs` (nearest-neighbor). Used in GameScene. |
 
 ## UI sprites
 
@@ -37,10 +37,10 @@ Self-generated via Node scripts using the Endesga 32 palette. License: original 
 
 | Path | Source | Added | Notes |
 | ---- | ------ | ----- | ----- |
-| `assets/sprites/ui/heart.png` | `scripts/make-heart.mjs` | 2026-06-15 | 8×7 pixel-art heart in Endesga 32 palette. Used in GameScene hearts UI. |
-| `assets/sprites/ui/dpad-arrow.png` | `scripts/make-arrow.mjs` | 2026-06-15 | 16×16 D-pad arrow button in Endesga 32 palette. Used 4× in GameScene D-pad (rotated 0°/90°/180°/270°). |
-| `assets/sprites/ui/icon-192.png` | `scripts/make-icons.mjs` | 2026-06-17 | 192×192 PWA app icon. Composites `fyhno-flying.png` on Endesga 32 `blue_mid` background with bold monospace "Fyhno" label. **License caveat:** inherits Midjourney terms from the embedded Fyhno sprite (see Character sprites). Referenced by PWA manifest. |
-| `assets/sprites/ui/icon-512.png` | `scripts/make-icons.mjs` | 2026-06-17 | 512×512 PWA app icon. Same composition as `icon-192.png`. **License caveat:** inherits Midjourney terms from the embedded Fyhno sprite (see Character sprites). Referenced by PWA manifest. |
+| `public/assets/sprites/ui/heart.png` | `scripts/make-heart.mjs` | 2026-06-15 | 8×7 pixel-art heart in Endesga 32 palette. Used in GameScene hearts UI. |
+| `public/assets/sprites/ui/dpad-arrow.png` | `scripts/make-arrow.mjs` | 2026-06-15 | 16×16 D-pad arrow button in Endesga 32 palette. Used 4× in GameScene D-pad (rotated 0°/90°/180°/270°). |
+| `public/assets/sprites/ui/icon-192.png` | `scripts/make-icons.mjs` | 2026-06-17 | 192×192 PWA app icon. Composites `fyhno-flying.png` on Endesga 32 `blue_mid` background with bold monospace "Fyhno" label. **License caveat:** inherits Midjourney terms from the embedded Fyhno sprite (see Character sprites). Referenced by PWA manifest. |
+| `public/assets/sprites/ui/icon-512.png` | `scripts/make-icons.mjs` | 2026-06-17 | 512×512 PWA app icon. Same composition as `icon-192.png`. **License caveat:** inherits Midjourney terms from the embedded Fyhno sprite (see Character sprites). Referenced by PWA manifest. |
 
 ## Palettes
 
@@ -48,7 +48,7 @@ Reference assets used by the art pipeline. Not loaded by the game.
 
 | Path | Source | Added | Notes |
 | ---- | ------ | ----- | ----- |
-| `assets/palettes/endesga-32.png` | [Endesga 32 on lospec.com](https://lospec.com/palette-list/endesga-32) — designed by Joran "Endesga" Mol | 2026-06-02 | Free use. Project-wide reference palette. |
+| `public/assets/palettes/endesga-32.png` | [Endesga 32 on lospec.com](https://lospec.com/palette-list/endesga-32) — designed by Joran "Endesga" Mol | 2026-06-02 | Free use. Project-wide reference palette. |
 
 ## Audio
 
@@ -56,7 +56,7 @@ CC0 / Public Domain. No attribution required, but recorded for our own paper tra
 
 | Path | Source | Added | Notes |
 | ---- | ------ | ----- | ----- |
-| `assets/audio/main-theme.mp3` | "Moon Chime" by obscure music on [OpenGameArt.org](https://opengameart.org/content/moon-chime) (original filename: `tipa16.mp3`) | 2026-06-15 | Looping main theme. Played from BootScene; persists across scenes via Phaser's global SoundManager. |
+| `public/assets/audio/main-theme.mp3` | "Moon Chime" by obscure music on [OpenGameArt.org](https://opengameart.org/content/moon-chime) (original filename: `tipa16.mp3`) | 2026-06-15 | Looping main theme. Played from BootScene; persists across scenes via Phaser's global SoundManager. |
 
 ## Code dependencies (npm)
 
