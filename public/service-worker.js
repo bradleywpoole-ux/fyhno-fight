@@ -1,14 +1,14 @@
 // Fyhno Fight — service worker
 // Bump CACHE_VERSION any time shipped assets change. The two-reload pattern from Soar:
 // first reload installs the new SW, second reload serves the new files.
-const CACHE_VERSION = 'fyhno-fight-v1';
+const CACHE_VERSION = 'fyhno-fight-v2';
 
+// Minimal shell — everything else is cached on first fetch.
 const PRECACHE_URLS = [
   './',
   './index.html',
   './manifest.json',
-  './src/main.js',
-  // Asset paths are added here as the game grows.
+  './service-worker.js',
 ];
 
 self.addEventListener('install', (event) => {
@@ -32,6 +32,17 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request))
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(event.request)
+        .then((response) => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_VERSION).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => cached);
+    })
   );
 });
