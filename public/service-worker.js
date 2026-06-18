@@ -1,7 +1,7 @@
 // Fyhno Fight — service worker
 // Bump CACHE_VERSION any time shipped assets change. The two-reload pattern from Soar:
 // first reload installs the new SW, second reload serves the new files.
-const CACHE_VERSION = 'fyhno-fight-v2';
+const CACHE_VERSION = 'fyhno-fight-v3';
 
 // Minimal shell — everything else is cached on first fetch.
 const PRECACHE_URLS = [
