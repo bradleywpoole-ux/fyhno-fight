@@ -41,6 +41,7 @@ Self-generated via Node scripts using the Endesga 32 palette. License: original 
 | `public/assets/sprites/ui/dpad-arrow.png` | `scripts/make-arrow.mjs` | 2026-06-15 | 16×16 D-pad arrow button in Endesga 32 palette. Used 4× in GameScene D-pad (rotated 0°/90°/180°/270°). |
 | `public/assets/sprites/ui/icon-192.png` | `scripts/make-icons.mjs` | 2026-06-17 | 192×192 PWA app icon. Composites `fyhno-flying.png` on Endesga 32 `blue_mid` background with bold monospace "Fyhno" label. **License caveat:** inherits Midjourney terms from the embedded Fyhno sprite (see Character sprites). Referenced by PWA manifest. |
 | `public/assets/sprites/ui/icon-512.png` | `scripts/make-icons.mjs` | 2026-06-17 | 512×512 PWA app icon. Same composition as `icon-192.png`. **License caveat:** inherits Midjourney terms from the embedded Fyhno sprite (see Character sprites). Referenced by PWA manifest. |
+| `public/assets/sprites/ui/coin.png` | `scripts/make-coin.mjs` | 2026-06-22 | 8×8 gold coin in Endesga 32 palette (red_dark outline, yellow_orange body, yellow upper-left highlight). Used in GameScene as collectible game objects (Arcade physics overlap destroys on Fyhno contact). Spin animation deferred — current sprite is the static front-facing frame. |
 
 ## Palettes
 
