@@ -20,11 +20,24 @@ export default class GameScene extends Phaser.Scene {
   create() {
     this.add.image(0, 0, 'mountain-sky').setOrigin(0, 0);
 
-    this.fyhno = this.add
+    this.coins = [];
+    [590, 640, 690].forEach((x) => {
+      const coin = this.physics.add.image(x, 200, 'coin').setOrigin(0.5).setScale(4);
+      coin.body.setAllowGravity(false);
+      coin.setImmovable(true);
+      this.coins.push(coin);
+    });
+    this.textures.get('coin').setFilter(Phaser.Textures.FilterMode.NEAREST);
+
+    this.fyhno = this.physics.add
       .sprite(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'fyhno-flying')
       .setOrigin(0.5)
       .setScale(4);
     this.fyhno.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+    this.fyhno.body.setAllowGravity(false);
+    this.fyhno.body.setSize(40, 40);
+
+    this.physics.add.overlap(this.fyhno, this.coins, (_fyhno, coin) => coin.destroy());
 
     this.hearts = [];
     for (let i = 0; i < 3; i++) {

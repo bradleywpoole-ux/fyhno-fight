@@ -15,6 +15,9 @@ const config = {
   height: GAME_HEIGHT,
   backgroundColor: COLORS.UI_BG,
   pixelArt: true,
+  physics: {
+    default: 'arcade',
+  },
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
