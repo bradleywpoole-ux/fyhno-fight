@@ -7,6 +7,10 @@ const HEART_SCALE = 4;
 const HEART_GAP = 8;
 const HEART_MARGIN = 16;
 const HEART_W = 8 * HEART_SCALE;
+const COIN_COUNTER_MARGIN = 16;
+const COIN_COUNTER_FONT_SIZE = 32;
+const COIN_COUNTER_GAP = 8;
+const COIN_COUNTER_ICON_SCALE = 4;
 const DPAD_SCALE = 4;
 const DPAD_BTN = 16 * DPAD_SCALE;
 const DPAD_CENTER_X = 96;
@@ -37,7 +41,12 @@ export default class GameScene extends Phaser.Scene {
     this.fyhno.body.setAllowGravity(false);
     this.fyhno.body.setSize(40, 40);
 
-    this.physics.add.overlap(this.fyhno, this.coins, (_fyhno, coin) => coin.destroy());
+    this.physics.add.overlap(this.fyhno, this.coins, (_fyhno, coin) => {
+      coin.destroy();
+      this.coinCount += 1;
+      this.coinCountText.setText(String(this.coinCount));
+      this.coinIcon.x = this.coinCountText.x - this.coinCountText.width - COIN_COUNTER_GAP;
+    });
 
     this.hearts = [];
     for (let i = 0; i < 3; i++) {
@@ -48,6 +57,22 @@ export default class GameScene extends Phaser.Scene {
       this.hearts.push(heart);
     }
     this.textures.get('heart').setFilter(Phaser.Textures.FilterMode.NEAREST);
+
+    this.coinCount = 0;
+    this.coinCountText = this.add
+      .text(GAME_WIDTH - COIN_COUNTER_MARGIN, COIN_COUNTER_MARGIN, '0', {
+        fontFamily: 'monospace',
+        fontSize: `${COIN_COUNTER_FONT_SIZE}px`,
+        color: '#ffffff',
+        fontStyle: 'bold',
+      })
+      .setOrigin(1, 0);
+
+    this.coinIcon = this.add
+      .image(0, COIN_COUNTER_MARGIN, 'coin')
+      .setOrigin(1, 0)
+      .setScale(COIN_COUNTER_ICON_SCALE);
+    this.coinIcon.x = this.coinCountText.x - this.coinCountText.width - COIN_COUNTER_GAP;
 
     this.touchInput = { up: false, down: false, left: false, right: false };
     const dpadButtons = [
